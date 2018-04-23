@@ -34,10 +34,6 @@ def turn(board)
   board[location] != " "
  end
 
-def input_to_index(user_input)
-  index = user_input.to_i - 1
-end
-
  def position_taken?(board, index)
   taken = nil
   if (board[index] ==  " " || board[index] == nil)
