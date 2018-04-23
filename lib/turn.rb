@@ -30,10 +30,6 @@ def turn(board)
    display_board(board)
  end
 
- def position_taken?(board, location)
-  board[location] != " "
- end
-
  def position_taken?(board, index)
   taken = nil
   if (board[index] ==  " " || board[index] == nil)
