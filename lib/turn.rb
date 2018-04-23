@@ -11,9 +11,9 @@ def turn(board)
    user_input = gets.strip
     index = input_to_index(user_input)
     token = current_player(board)
-   if valid_move?(board, 1,9)
+      if valid_move?(board,index)
      move(board, 1,9)
-    else
+      else
      turn(board)
    end
    display_board(board)
