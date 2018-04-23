@@ -5,38 +5,25 @@ def display_board(board)
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
-puts "Please enter 1-9:"
-user_input = gets.strip
- index = input_to_index(user_input)
- token = current_player(board)
-   if valid_move?(board,index)
-  move(board, 1,9)
-   else
-  turn(board)
-end
-display_board(board)
-end
-
-def position_taken?(board, location)
-board[location] != " "
-end
-
-def input_to_index(user_input)
-index = user_input.to_i - 1
-end
 def valid_move?(board, index)
-if index.between?(0,8) && position_taken?(board, index)
-   true
-else
-   false
- end
+  if (board[index] == " ")
+     true
+  else
+     false
+end
 end
 def position_taken?(board, index)
-taken = nil
-if (board[index] ==  " " || board[index] == nil)
- taken = false
-else
- taken = true
+  taken = nil
+  if (board[index] ==  " " || board[index] == "" || board[index] == nil)
+   taken = false
+  else
+  taken = true
+  end
+  taken
 end
- taken
+def position_taken?(board, index)
+
+ def input_to_index(move)
+   index = move.to_i - 1
+   index
 end
