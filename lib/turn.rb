@@ -10,32 +10,36 @@ def input_to_index(user_input)
 end
 
 
-def valid_move?(board,index)
-   if index.to_.i.between?(1,9)
-     if !index_taken?(board,index.to_i-1)
-    end
- end
+def valid_move?(board, position)	
+  if position.to_i.between?(1,9)	
+    if !position_taken?(board, position.to_i-1)	
+true	
+end	
+
+def valid_move?(board, position)
+end	
+
+  def turn(board)	
+
+display_board(board)		
+puts "Please enter 1-9:"	
+
+input = gets.strip	
+
+if valid_move?(board, input)	
+
+ move(board, input)	
+
+else	
+
+turn(board)	
+end	
+end	
 
 
-def turn(board)
-   puts "Please enter 1-9:"
-   user_input = gets.strip
-    index = input_to_index(user_input)
-    token = current_player(board)
-      if valid_move?(board,index)
-     move(board, 1,9)
-      else
-     turn(board)
-   end
-   display_board(board)
- end
 
- def position_taken?(board, index)
-  taken = nil
-  if (board[index] ==  " " || board[index] == nil)
-    taken = false
-  else
-    taken = true
-  end
-    taken
-end
+
+def position_taken?(board, location)	
+  def position_taken?(board, location)
+
+def move(board, location, current_player ="X")	
