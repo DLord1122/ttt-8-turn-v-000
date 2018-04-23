@@ -1,34 +1,71 @@
 def display_board(board)
-  def display_board(board)
- puts " #{board[0]} | #{board[1]} | #{board[2]} "
- puts "-----------"
- puts " #{board[3]} | #{board[4]} | #{board[5]} "
- puts "-----------"
- puts " #{board[6]} | #{board[7]} | #{board[8]} "
- board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
-end
-end
-def valid_move?(board, position)
-  if position.to_i.between?(1,9)
-     if !position_taken?(board, position.to_i-1)
-       true
-     end
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts "-----------"
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts "-----------"
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+  board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
 end
 
- def turn(board)
-   display_board(board)
-   puts "Please enter 1-9:"
-   input = gets.strip
-   if valid_move?(board, input)
-     move(board, input)
+def input_to_index(move)
+   index = move.to_i - 1
+   index
+end
+
+def turn(board)
+  puts "Please enter 1-9:"
+
+  user_input = gets.strip
+
+  index = input_to_index(user_input)
+  token = current_player(board)
+
+  if valid_move?(board,index)
+    puts 'valid move'
+    move(board, index, token)
+    display_board(board)
    else
-     turn(board)
-   end
- end
-
-
- def position_taken?(board, location)
-   def move(board, location, current_player = "X")
-   board[location.to_i-1] = current_player
+    puts 'try again'
+    turn(board)
+  end
+  display_board(board)
 end
+
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
+def valid_move?(board, index)
+
+  if index.between?(0,8) && !position_taken?(board, index)
+    return true
+  else
+   return false
+  end
+end
+
+def turn_count(board)
+  counter = 0
+  board.each do |space|
+    if space == "X" || space == "O"
+      counter +=1
+  end
+end
+return counter
+end
+
+def current_player(board)
+  if turn_count(board)%2 ==0
+    current_player = "X"
+  else
+    current_player = "O"
+end
+return current_player
+end
+
+
+def move(board, index, token)
+  board[index] = token
+  play(board)
+
 end
