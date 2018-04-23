@@ -7,7 +7,10 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
   board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
 end
-def current_player(token)
+def current_player(board)
+  if turn_count(board) == 1 then player = "O"
+  else player = "X"
+  end
 end
 def turn(board)
   puts "Please enter 1-9:"
