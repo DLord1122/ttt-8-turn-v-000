@@ -8,8 +8,8 @@ def display_board(board)
   board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
 end
 def current_player(token)
-  if turn(board) == 1 then player = "O"
-  else player = "X"
+  if turn(board) == 1 then current_player = "O"
+  else current_player = "X"
   end
 end
 def turn(board)
