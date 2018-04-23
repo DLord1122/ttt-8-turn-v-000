@@ -8,7 +8,7 @@ def display_board(board)
   board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
 end
 def current_player(board)
-  if turn?(board) == 1 then current_player = "O"
+  if turn(board) == 1 then current_player = "O"
   else current_player = "X"
   end
 end
