@@ -31,8 +31,10 @@ def valid_move?(board, index)
    if index.between?(0,8) && !position_taken?(board, index)
      true
    else
-     false 
+     false
     end
+    def move(board, location, current_player = "X")
+      board[location.to_i-1] = current_player
  end
  def position_taken?(board, index)
   taken = nil
