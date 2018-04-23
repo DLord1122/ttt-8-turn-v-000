@@ -5,7 +5,7 @@ def display_board(board)
   puts " #{board[3]} | #{board[4]} | #{board[5]} "
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
-  board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
+
 end
 def turn(board)
    puts "Please enter 1-9:"
@@ -27,10 +27,7 @@ def turn(board)
 def input_to_index(user_input)
   index = user_input.to_i - 1
 end
-def valid_move?(board,index)
-   if index.between?(0,8) && position_taken?(board,index)
-    end
- end
+
  def position_taken?(board, index)
   taken = nil
   if (board[index] ==  " " || board[index] == nil)
