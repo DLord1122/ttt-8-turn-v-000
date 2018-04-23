@@ -44,5 +44,5 @@ def valid_move?(board, index)
     taken
 end
 def move(board, index, current_player = "X")
-  board[index.to_i-1] = current_player
+  board[index.to_i] = current_player
 end
